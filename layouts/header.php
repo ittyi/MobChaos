@@ -28,7 +28,11 @@
               </form>
             </li>
             <li class="nav__item center"><a href="./../LoginAndSignUp/sinup.php">サインアップ</a></li>
-            <li class="nav__item center"><a href="?mode=state">ログアウト</a></li>
+            <li class="nav__item center">
+              <form method='post' action="?mode=state" >
+                <button type="submit" name="logout">ログアウト</button>
+              </form> 
+            </li>
             <li class="nav__item center"><a href="#">プロフィール</a></li>
           </ul>
         </nav>

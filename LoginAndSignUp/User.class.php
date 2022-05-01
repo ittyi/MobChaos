@@ -1,5 +1,6 @@
 <?php 
 require_once dirname(__FILE__) . '/UnauthorizedState.class.php';
+require_once './../dao/dbconect.php';
 ?>
 
 <?php
@@ -10,6 +11,7 @@ class User {
     private $uid;
     private $state;
     private $count = 0;
+    private $pwd;
 
     public function __construct($uid){
         $this->uid = $uid;
@@ -18,7 +20,6 @@ class User {
         $this->resetCount();
     }
 
-    
     public function switchState() {
         //状態を切り替える
         //echo "状態遷移:" . get_class($this->state) . "→";
@@ -40,6 +41,10 @@ class User {
 
     public function getCount(){
         return $this->count;
+    }
+
+    public function getPassword(){
+        return $this->pwd;
     }
 
     public function incrementCount(){
