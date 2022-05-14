@@ -1,8 +1,8 @@
 <?php
 require_once './Dao/getPostedInfoDao.class.php';
 require_once './Class/Paging.class.php';
+require_once './../../../layouts/common/view/header.php';
 
-include './../../../layouts/common/view/header.php';
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -31,7 +31,6 @@ include './../../../layouts/common/view/header.php';
     if(!$page){
         $page = 1;
     }
-
     
     $contents_data->getPostedInfo($page, $row_count);
 
