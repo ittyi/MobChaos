@@ -49,7 +49,10 @@ require_once './Dao/getLoginInfoDao.class.php';
                 if (!$context->isAuthenticated())
                 {
                     session_destroy();
+                }else {
+                    
                 }
+
                 break;
             }
     }
@@ -58,11 +61,16 @@ require_once './Dao/getLoginInfoDao.class.php';
 ?>
 
 <?php
+
 if( !$context->isAuthenticated()):
+    //初期表示時、ログイン画面を表示する
     include './../../../layouts/view/login.php';
 else:
-    include './../../../layouts/common/view/base.php';
-?>
+    header('Location: http://192.168.3.11/mob/src/action/PostedInfo/posted_info_client.php');
+?> 
 <?php
 endif;
+
+$test = $context->getMenu();
+prnt_r($test);
 ?>
